@@ -25,8 +25,8 @@ jobs:
             - name: Build with Dockerfile
               uses: ./.github/actions/docker_build
               with:
-                image_name: 'ImageName'
-                tag_name: 'TagName'
+                image_name: 'imagename'
+                tag_name: 'tagname'
 
             - name: List Docker images
               run: docker image ls
