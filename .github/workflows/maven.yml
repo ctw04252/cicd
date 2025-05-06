@@ -1,5 +1,7 @@
 name: Java CI with Maven
-
+env:
+    docker-image-name: 'imagename'
+    docker-tag-name: 'tagname'
 on:
     push:
         branches: [ "main" ]
@@ -25,8 +27,8 @@ jobs:
             - name: Build with Dockerfile
               uses: ./.github/actions/docker_build
               with:
-                image_name: 'imagename'
-                tag_name: 'tagname'
+                image_name: $docker-image-name
+                tag_name: $docker-tag-name
 
     list-docker-images:
         needs: build
