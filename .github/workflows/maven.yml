@@ -21,3 +21,6 @@ build:
 
         - name: Build with Maven
         run: mvn -B package --file pom.xml
+
+        - name: Build wit Dockerfile
+        run: docker build . --file Dockerfile --tag academy:$(date +%s)

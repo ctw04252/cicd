@@ -16,4 +16,4 @@ COPY --from=build /app/target/quarkus-app/*.jar .
 COPY --from=build /app/target/quarkus-app/app/ app/
 COPY --from=build /app/target/quarkus-app/quarkus/ quarkus/
 
-CMD java -jar /deployments/quarkus-run.jar  
+CMD java -jar /deployments/quarkus-run.jar
