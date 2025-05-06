@@ -23,7 +23,7 @@ jobs:
               uses: ./.github/actions/maven_build
 
             - name: Build with Dockerfile
-              run: docker build . --file Dockerfile --tag academy:$(date +%s)
+              uses: ./.github/actions/docker_build
 
             - name: List Docker images
               run: docker image ls
