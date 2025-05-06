@@ -1,5 +1,5 @@
-name: Maven Action
-description: Maven Action
+name: Docker Action
+description: Docker Action
 inputs:
   path_dockerfile:
     description: "Dockerfile Path Description"
