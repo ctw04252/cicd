@@ -1,8 +1,25 @@
 name: Maven Action
 description: Maven Action
+inputs:
+  path_dockerfile:
+    description: "Dockerfile Path Description"
+    required: false
+    default: "Dockerfile"
+  image_name:
+    description: "Image Description"
+    required: true
+  tag_name:
+    description: "Tag Description"
+    required: true
 runs:
   using: composite
   steps:
     - name: Maven Run Build
-      run: docker build . --file Dockerfile --tag academy:$(date +%s)
+      run:
+        if [ -z "${{ inputs.tag_name }}" ]; then
+          export TAG=$(date +%s)
+        else
+          export TAG="${{ inputs.tag_name }}"
+        fi
+          docker build . --file Dockerfile --tag academy:$(date +%s)
       shell: bash
