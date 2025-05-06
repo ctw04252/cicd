@@ -29,6 +29,7 @@ jobs:
                 tag_name: 'tagname'
 
     list-docker-images:
+        needs: build
         runs-on: ubuntu-latest
         steps:
             - name: List Docker images
