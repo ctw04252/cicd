@@ -15,7 +15,7 @@ runs:
   using: composite
   steps:
     - name: Maven Run Build
-      run:
+      run: |
         if [ -z "${{ inputs.tag_name }}" ]; then
           export TAG=$(date +%s)
         else
