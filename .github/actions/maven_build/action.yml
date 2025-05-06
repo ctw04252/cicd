@@ -1,0 +1,8 @@
+name: Maven Action
+description: Maven Action
+runs:
+  using: composite
+  steps:
+    - name: Maven Run Build
+      run: mvn -B package --file pom.xml
+      #shell: bash
