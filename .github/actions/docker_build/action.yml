@@ -21,5 +21,5 @@ runs:
         else
           export TAG="${{ inputs.tag_name }}"
         fi
-          docker build . --file Dockerfile --tag academy:$(date +%s)
+          docker build . --file {{path_dockerfile}} --tag {{tag_name}}
       shell: bash

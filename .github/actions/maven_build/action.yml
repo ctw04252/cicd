@@ -6,4 +6,3 @@ runs:
     - name: Maven Run Build
       run: mvn -B package --file pom.xml
       shell: bash
-
